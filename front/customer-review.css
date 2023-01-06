@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.header{
+  min-height: auto !important;
+}
+.body {
+    overflow-y: scroll;
+}
+
+.kingcontainer {
+    border: 1px solid rgb(197, 197, 197);
+    padding-bottom: 100px;
+}
+
+.bosscontainer {
+    padding-bottom: 100px;
+}
+
+.course {
+    color: #4070f4;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+p {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+/*---------------------review board start----------------------*/
+.under-header {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  text-align: center;
+  background: #fff;
+}
+
+.container {
+  position: relative;
+  width: 400px !important;
+  background: #ffffff;
+  padding: 20px 30px;
+  border: 0x solid rgb(0, 132, 255);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.13);
+}
+
+.container .post {
+  display: none;
+}
+
+.container .text {
+  font-size: 25px;
+  color: #666;
+  font-weight: 500;
+}
+
+.container .edit {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.container .edit:hover {
+  text-decoration: underline;
+}
+
+.container .star-widget input {
+  display: none;
+}
+
+#block, #block2 {
+  display: block;
+}
+
+.star-widget label {
+  font-size: 40px;
+  color: rgb(180, 180, 180);
+  padding: 10px;
+  float: right;
+  transition: all 0.2s ease;
+}
+
+input:not(:checked)~label:hover,
+input:not(:checked)~label:hover~label {
+  color: #4070f4;
+}
+
+input:checked~label {
+  color: #4070f4;
+}
+
+input#rate-5:checked~label {
+  color: #4070f4;
+}
+
+/* .container form {
+  display: none;
+} */
+
+input:checked~form {
+  display: block;
+}
+
+form header {
+  width: 100%;
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  margin: 5px 0 20px 0;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+form .textarea {
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+}
+
+form .textarea textarea {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: rgb(0, 0, 0);
+  border: 0px solid #333;
+  border-radius: 2px;
+  background: rgb(255, 255, 255);
+  padding: 10px;
+  font-size: 17px;
+  resize: none;
+}
+
+.textarea textarea:focus {
+  border-color: #4360ad;
+  border: 0.5px solid rgba(134, 134, 134, 0.295);
+}
+
+form .btn {
+  height: 45px;
+  width: 100%;
+  margin: 15px 0;
+}
+
+form .btn button, #block, #block2 {
+  height: 100%;
+  width: 100%;
+  border-radius: 2px;
+  border: 0.5px solid #4070f4;
+  outline: none;
+  background: #4070f4;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form .btn button:hover {
+  background: #4360ad;
+}
+
+
+#modify-btn{
+  display: none;
+}
+/*----------------------리뷰 조회 시작------------------------*/
+#testimonials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.testimonial-heading {
+    letter-spacing: 1px;
+    margin: 30px 0px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonial-heading h1 {
+    font-size: 2.2rem;
+    font-weight: 500;
+    background-color: #202020;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.testimonial-box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.testimonial-box {
+    width: 500px;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 20px;
+    margin: 15px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.name-user {
+    display: flex;
+    flex-direction: column;
+}
+
+.name-user strong {
+    color: #3d3d3d;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.box-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.client-comment p {
+    font-size: 0.9rem;
+    color: #4b4b4b;
+}
+
+.testimonial-box:hover {
+    transform: translateY(-10px);
+    transition: all ease 0.3s;
+}
+
+/*----------------------수정 버튼------------------------*/
+.field button {
+    width: 125px;
+    height: calc(100% + 5px);
+    border: none;
+    background: #4070f4;
+    margin-top: -10px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.5s ease;
+    margin-right: 6px;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="coupon.css">
+</head>
+
+<body>
+    <div class="container">
+
+    </div>
+
+    <div id="modelBox">
+        <img src="images/basket.jpg" class="basket" width:"100%">
+        <div class="offer-text">
+            <h2>Welcome Gift</h2>
+            <small>신규회원 이벤트 상품으로 포인트를 드립니다</small>
+            <p>마이페이지에서 1000000포인트를 확인하세요</p>
+
+        </div>
+        <img src="images/closebutton.png" class="close-icon" onclick="closeModel()">
+    </div>
+
+    <script>
+        let modelBox = document.getElementById("modelBox");
+
+        document.onmouseleave = function () {
+            modelBox.style.display = "block";
+        }
+
+        function closeModel() {
+            modelBox.style.display = "none";
+        }
+
+    </script>
+
+
+</body>
+
+</html>

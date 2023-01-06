@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="owner-page.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap"
+        rel="stylesheet" />
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+</head>
+
+<body>
+
+    <section class="header">
+      <nav>
+        <a href="index.html"><img src="images/logo.PNG" /></a>
+        <div class="nav-links">
+          <ul>
+            <li><a href="/index.html">홈</a></li>
+            <li class="login-btn">
+              <a href="loginsignup.html">로그인 / 회원가입</a>
+            </li>
+            <li class="logout-btn"><a id="applyServicePage" href="customer-place-order.html">서비스 신청</a></li>
+            <li class="logout-btn"><a id="getServicePage" href="customer-services.html">서비스 현황</a></li>
+            <li class="logout-btn"><a id="myPage" href="mypage.html">마이페이지</a></li>
+            <li class="logout-btn"><a id="reviewPage" href="owner-review.html">리뷰 조회</a></li>
+            <li class="logout-btn">
+              <a href="#" onclick="customAlert('로그아웃 하시겠습니까?')"
+                >로그아웃</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+        <!-- 세탁물 관리 -->
+        <div class="kingcontainer">
+
+            <div class="container">
+                <header>고객 주문 관리</header>
+
+                <!-- 상태 업데이트 바 입니다 -->
+                <div class="progress-bar">
+                    <div class="step">
+                        <p>
+                            대기 중
+                        </p>
+                        <div id="bullet1" class="bullet">
+                            <span id="span1">1</span>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <p>
+                            수거 중
+                        </p>
+                        <div id="bullet2" class="bullet">
+                            <span id="span2">2</span>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <p>
+                            수거 완료
+                        </p>
+                        <div id="bullet3" class="bullet">
+                            <span id="span3">3</span>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <p>
+                            배송 중
+                        </p>
+                        <div id="bullet4" class="bullet">
+                            <span id="span4">4</span>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <p>
+                            배송 완료
+                        </p>
+                        <div id="bullet5" class="bullet">
+                            <span id="span5">5</span>
+                        </div>
+                    </div>
+                </div>
+                <p id="jongki">버튼을 눌러 상태 업데이트를 완료하세요</p>
+                <!------- 여기서부터는 고객님 정보 입니다----------
+
+        혹시 textarea가 필요하시다면 
+        <textarea cols="30"></textarea> 여깄습니다 -->
+
+                <div class="form-outer">
+                    <form action="#">
+                        <div class="page slide-page">
+                            <div class="label">
+                                <p id="service-id"></p>
+                            </div>
+                            <div class="field">
+                                <div class="label">
+                                    닉네임
+                                </div>
+                                <input id="customer-nickname" type="text" readonly>
+                            </div>
+                            <div class="field">
+                                <div class="label">
+                                    전화번호
+                                </div>
+                                <input id="customer-phone-number" type="text" readonly>
+                            </div>
+                            <div class="field">
+                                <div class="label">
+                                    주소
+                                </div>
+                                <input id="customer-address" type="text" readonly>
+                            </div>
+                            <div class="field">
+                                <div class="label">
+                                    요청사항
+                                </div>
+                                <input id="customer-request" type="text" readonly>
+                            </div>
+
+<!--                    <div class="field">-->
+<!--                        <button class="firstNext next">업데이트</button>-->
+<!--                    </div>-->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+      <!-- 로그아웃 모달창 -->
+      <div
+        class="modal fade"
+        id="alertModal"
+        tabindex="-1"
+        aria-labelledby="alertModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">알림</h5>
+              <button
+                type="button"
+                class="btn-close btn-confirm"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p id="modal-text"></p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                취소
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary btn-confirm"
+                onclick="logout()"
+              >
+                로그아웃
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 모달창2 -->
+      <div
+      class="modal fade"
+      id="alertModal2"
+      tabindex="-1"
+      data-bs-backdrop="static"
+      aria-labelledby="alertModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">알림</h5>
+            <button
+              type="button"
+              class="btn-close btn-confirm"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p id="modal-text2"></p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary btn-confirm"
+              data-bs-dismiss="modal"
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </section>
+
+    <!-- bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- ajax-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- owner-page.js -->
+    <script src="./owner-page.js" type="text/javascript"></script>
+</body>
+
+</html>

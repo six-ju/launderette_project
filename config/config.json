@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "root",
+    "password": "10041004",
+    "database": "mrchun",
+    "host": "express-database.cllbd8oq6oqs.ap-northeast-2.rds.amazonaws.com",
+    "dialect": "mysql",
+    "timezone": "+09:00"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
